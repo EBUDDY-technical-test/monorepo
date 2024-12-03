@@ -1,12 +1,12 @@
 import { ControlledTextField } from "@/components/controlled/controlled-textfield";
 import { useUpdateUserMutation } from "@/features/user/api/user-api";
-import { User } from "@/types/user";
 import { LoadingButton } from "@mui/lab";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack } from "@mui/material"
 import { FC, useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import { UpdateUserSchema, updateUserSchema } from "@/features/user/schema/update-user-schema";
+import { User } from "@repo/entities";
 
 interface UpdateUserModalProps {
   open: boolean;

@@ -1,10 +1,10 @@
 import { useGetUsersQuery } from '@/features/user/api/user-api';
 import { UpdateUserModal } from '@/features/user/components/update-user-modal';
-import { User } from '@/types/user';
 import { Avatar, IconButton } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useState } from 'react';
 import { Edit } from '@mui/icons-material';
+import { User } from '@repo/entities';
 
 export const UserGrid = () => {
   const { data, isLoading } = useGetUsersQuery('users')

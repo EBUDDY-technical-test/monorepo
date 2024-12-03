@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@repo/entities": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@emotion/react": "^11.13.5",

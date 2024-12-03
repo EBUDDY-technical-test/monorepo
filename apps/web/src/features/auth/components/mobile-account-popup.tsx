@@ -1,6 +1,6 @@
 import { signoutActions } from "@/features/auth/actions/signout-actions";
 import { Logout } from "@mui/icons-material";
-import { Avatar, Box, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Stack, Typography } from "@mui/material"
+import { Avatar, Box, IconButton, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material"
 import { useState } from "react";
 
 export const AccountPopup = () => {

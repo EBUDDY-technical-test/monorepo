@@ -22,7 +22,7 @@ export const SigninForm = () => {
   useEffect(() => {
     if (!success) return;
     redirect(ROUTES.DASHBOARD);
-  }, [success, redirect])
+  }, [success])
   
   return (
     <Box>

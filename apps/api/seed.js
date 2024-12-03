@@ -3,7 +3,7 @@ const { initializeApp } = require("firebase-admin/app");
 const { initializeFirestore } = require("firebase-admin/firestore");
 const { faker } = require("@faker-js/faker");
 
-const serviceAccount = require('./firebase-service-account.json');
+const serviceAccount = require('../../firebase-service-account.json');
 
 const app = initializeApp({
   credential: credential.cert(serviceAccount),

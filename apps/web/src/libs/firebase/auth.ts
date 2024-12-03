@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword as _signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut as _signOut,
-  getAuth,
 } from 'firebase/auth';
 
 import { firebaseAuth } from './config';
@@ -50,7 +49,7 @@ export async function signUpWithEmailAndPassword(data: EmailAndPasswordData) {
 
 export async function signOut() {
   try {
-    return await getAuth().signOut();
+    return await _signOut(firebaseAuth);
   } catch (error) {
     console.error('Error signing out with Google', error);
   }

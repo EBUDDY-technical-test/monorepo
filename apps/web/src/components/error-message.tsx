@@ -19,6 +19,7 @@ export const ErrorMessage: FC<ErrorMessageProps> = ({ errors }) => {
       {typeof errors === 'object' 
         ? errors.map((error, index) => (
           <Stack 
+            key={error + index}
             direction="row" 
             alignItems="center" 
             gap={2}

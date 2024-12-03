@@ -5,7 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { loggerMiddleware } from '@middleware/logger-middleware';
 import { connectFunctionsEmulator } from 'firebase/functions';
-import { firebaseFunctions } from '@config/firebaseConfig';
+import { firebaseFunctions } from '@config/firebase-config';
 import { authMiddleware } from '@middleware/auth-middleware';
 
 dotenv.config();
@@ -19,7 +19,7 @@ app.use(cors({
   origin: "http://localhost:3000",
   credentials: true,
 }));
-app.use(cookieParser() as any);
+app.use(cookieParser());
 app.use(loggerMiddleware);
 app.use(authMiddleware);
 
