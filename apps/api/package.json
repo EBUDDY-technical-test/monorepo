@@ -1,0 +1,31 @@
+{
+	"name": "ts-node-express",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"build": "concurrently \"npx tsc\" \"cd functions && npx tsc\"",
+		"dev": "nodemon -r tsconfig-paths/register src/index.ts"
+	},
+	"dependencies": {
+		"concurrently": "^9.1.0",
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.21.1",
+		"firebase": "^11.0.2",
+		"firebase-admin": "^13.0.1",
+		"nodemon": "^3.1.7",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0"
+	},
+	"devDependencies": {
+		"@faker-js/faker": "^9.2.0",
+		"@types/cookie-parser": "^1.4.8",
+		"@types/cors": "^2.8.17",
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.10.0",
+		"turbo": "^2.3.3",
+		"typescript": "^5.7.2"
+	}
+}

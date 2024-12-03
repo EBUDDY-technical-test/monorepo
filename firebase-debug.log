@@ -1,0 +1,179 @@
+[debug] [2024-12-03T05:25:23.062Z] ----------------------------------------------------------------------
+[debug] [2024-12-03T05:25:23.064Z] Command:       /Users/charismanapriandi/.nvm/versions/node/v22.11.0/bin/node /Users/charismanapriandi/.nvm/versions/node/v22.11.0/bin/firebase emulators:start --only functions
+[debug] [2024-12-03T05:25:23.064Z] CLI Version:   13.27.0
+[debug] [2024-12-03T05:25:23.064Z] Platform:      darwin
+[debug] [2024-12-03T05:25:23.064Z] Node Version:  v22.11.0
+[debug] [2024-12-03T05:25:23.065Z] Time:          Tue Dec 03 2024 13:25:23 GMT+0800 (Central Indonesia Time)
+[debug] [2024-12-03T05:25:23.065Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-03T05:25:23.127Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-03T05:25:23.127Z] > authorizing via signed-in user (charismanapriandi@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-12-03T05:25:23.334Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-12-03T05:25:23.334Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":5003},{"address":"::1","family":"IPv6","port":5003}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-12-03T05:25:23.337Z] [hub] writing locator at /var/folders/8q/7pfhvc0d5qd366hx8mwjnkfw0000gn/T/hub-ebuddy-backend-b531c.json
+[debug] [2024-12-03T05:25:23.510Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-12-03T05:25:23.510Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-12-03T05:25:23.510Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-12-03T05:25:23.510Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":5003},{"address":"::1","family":"IPv6","port":5003}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2024-12-03T05:25:23.512Z] defaultcredentials: writing to file /Users/charismanapriandi/.config/firebase/charismanapriandi_gmail_com_application_default_credentials.json
+[debug] [2024-12-03T05:25:23.514Z] Setting GAC to /Users/charismanapriandi/.config/firebase/charismanapriandi_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/charismanapriandi/.config/firebase/charismanapriandi_gmail_com_application_default_credentials.json"}}
+[debug] [2024-12-03T05:25:23.514Z] Checked if tokens are valid: true, expires at: 1733204799864
+[debug] [2024-12-03T05:25:23.514Z] Checked if tokens are valid: true, expires at: 1733204799864
+[debug] [2024-12-03T05:25:23.515Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ebuddy-backend-b531c/adminSdkConfig [none]
+[debug] [2024-12-03T05:25:24.141Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ebuddy-backend-b531c/adminSdkConfig 200
+[debug] [2024-12-03T05:25:24.141Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ebuddy-backend-b531c/adminSdkConfig {"projectId":"ebuddy-backend-b531c","databaseURL":"https://ebuddy-backend-b531c-default-rtdb.firebaseio.com","storageBucket":"ebuddy-backend-b531c.firebasestorage.app"}
+[info] i  functions: Watching "/Users/charismanapriandi/Work/EBUDDY-test/monorepo/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/functions\" for Cloud Functions..."}}
+[debug] [2024-12-03T05:25:24.175Z] Validating nodejs source
+[debug] [2024-12-03T05:25:24.941Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-12-03T05:25:24.942Z] Building nodejs source
+[debug] [2024-12-03T05:25:24.944Z] Failed to find version of module node: reached end of search path /Users/charismanapriandi/Work/EBUDDY-test/monorepo/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2024-12-03T05:25:24.948Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-12-03T05:25:24.952Z] Found firebase-functions binary at '/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/.bin/firebase-functions'
+[info] Serving at port 8327
+
+[debug] [2024-12-03T05:25:25.269Z] Got response from /__/functions.yaml {"endpoints":{"fetchUserData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"fetchUserData"},"a":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"a"},"updateUserData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"updateUserData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: fetchUserData, a, updateUserData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: fetchUserData, a, updateUserData."}}
+[info] ✔  functions[us-central1-fetchUserData]: http function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/fetchUserData). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/fetchUserData)."}}
+[info] ✔  functions[us-central1-a]: http function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/a). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/a)."}}
+[info] ✔  functions[us-central1-updateUserData]: http function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/updateUserData). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/ebuddy-backend-b531c/us-central1/updateUserData)."}}
+[debug] [2024-12-03T05:25:29.322Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:5003/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:5003/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-12-03T05:25:37.544Z] [work-queue] {"queuedWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:25:37.542Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:25:37.546Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:25:37.542Z"],"workRunningCount":1}
+[debug] [2024-12-03T05:25:37.546Z] Accepted request GET /ebuddy-backend-b531c/us-central1/a --> us-central1-a
+[debug] [2024-12-03T05:25:37.551Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-12-03T05:25:37.552Z] [functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/"}}
+[debug] [2024-12-03T05:25:37.561Z] [worker-pool] addWorker(us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-a)"}}
+[debug] [2024-12-03T05:25:37.563Z] [worker-pool] Adding worker with key us-central1-a, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-a, total=1"}}
+[info] >  (node:18860) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:18860) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:18860) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2024-12-03T05:25:38.431Z] [runtime-status] [18860] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.432Z] [runtime-status] [18860] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.1.1","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.1.1\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.432Z] [runtime-status] [18860] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-12-03T05:25:38.432Z] [runtime-status] [18860] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.1.1","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.1.1\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.603Z] [runtime-status] [18860] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-12-03T05:25:38.603Z] [runtime-status] [18860] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.1.1","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.1.1\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2024-12-03T05:25:38.603Z] [runtime-status] [18860] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.1.1","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.1.1\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.606Z] [runtime-status] [18860] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.607Z] [runtime-status] [18860] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.1.1","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.1.1\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2024-12-03T05:25:38.607Z] [runtime-status] [18860] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2024-12-03T05:25:38.636Z] [runtime-status] [18860] Functions runtime initialized. {"cwd":"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/functions","node_version":"22.11.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Functions runtime initialized. {\"cwd\":\"/Users/charismanapriandi/Work/EBUDDY-test/monorepo/functions\",\"node_version\":\"22.11.0\"}"}}
+[debug] [2024-12-03T05:25:38.636Z] [runtime-status] [18860] Listening to port: /var/folders/8q/7pfhvc0d5qd366hx8mwjnkfw0000gn/T/fire_emu_91e121285fd34ed6.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[runtime-status] [18860] Listening to port: /var/folders/8q/7pfhvc0d5qd366hx8mwjnkfw0000gn/T/fire_emu_91e121285fd34ed6.sock"}}
+[debug] [2024-12-03T05:25:38.678Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:25:38.678Z] [worker-pool] submitRequest(triggerId=us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-a)"}}
+[info] i  functions: Beginning execution of "us-central1-a" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Beginning execution of \"us-central1-a\""}}
+[debug] [2024-12-03T05:25:38.678Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY"}}
+[debug] [2024-12-03T05:25:39.376Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-a" in 698.063875ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finished \"us-central1-a\" in 698.063875ms"}}
+[debug] [2024-12-03T05:25:39.377Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:25:39.378Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-12-03T05:25:39.378Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-12-03T05:25:39.378Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:25:59.301Z] Functions emulator received unknown request at path /undefined/us-central1/fetchUserData
+[debug] [2024-12-03T05:26:42.165Z] [work-queue] {"queuedWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:26:42.129Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:26:42.181Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:26:42.129Z"],"workRunningCount":1}
+[debug] [2024-12-03T05:26:42.182Z] Accepted request GET /ebuddy-backend-b531c/us-central1/a --> us-central1-a
+[debug] [2024-12-03T05:26:42.371Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-12-03T05:26:42.377Z] [functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/"}}
+[debug] [2024-12-03T05:26:42.380Z] [worker-pool] submitRequest(triggerId=us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-a)"}}
+[info] i  functions: Beginning execution of "us-central1-a" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Beginning execution of \"us-central1-a\""}}
+[debug] [2024-12-03T05:26:42.403Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY"}}
+[debug] [2024-12-03T05:26:42.678Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-a" in 274.594667ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finished \"us-central1-a\" in 274.594667ms"}}
+[debug] [2024-12-03T05:26:42.681Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:26:42.681Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-12-03T05:26:42.681Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-12-03T05:26:42.681Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:27:14.421Z] [work-queue] {"queuedWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:27:14.416Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:27:14.425Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:27:14.416Z"],"workRunningCount":1}
+[debug] [2024-12-03T05:27:14.425Z] Accepted request GET /ebuddy-backend-b531c/us-central1/a --> us-central1-a
+[debug] [2024-12-03T05:27:14.458Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-12-03T05:27:14.459Z] [functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/"}}
+[debug] [2024-12-03T05:27:14.459Z] [worker-pool] submitRequest(triggerId=us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-a)"}}
+[info] i  functions: Beginning execution of "us-central1-a" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Beginning execution of \"us-central1-a\""}}
+[debug] [2024-12-03T05:27:14.464Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY"}}
+[debug] [2024-12-03T05:27:14.647Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-a" in 182.99475ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finished \"us-central1-a\" in 182.99475ms"}}
+[debug] [2024-12-03T05:27:14.648Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:27:14.648Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-12-03T05:27:14.648Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-12-03T05:27:14.648Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:27:29.113Z] [work-queue] {"queuedWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:27:29.110Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:27:29.117Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:27:29.110Z"],"workRunningCount":1}
+[debug] [2024-12-03T05:27:29.117Z] Accepted request GET /ebuddy-backend-b531c/us-central1/a --> us-central1-a
+[debug] [2024-12-03T05:27:29.138Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-12-03T05:27:29.139Z] [functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/"}}
+[debug] [2024-12-03T05:27:29.140Z] [worker-pool] submitRequest(triggerId=us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-a)"}}
+[info] i  functions: Beginning execution of "us-central1-a" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Beginning execution of \"us-central1-a\""}}
+[debug] [2024-12-03T05:27:29.145Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY"}}
+[debug] [2024-12-03T05:27:29.319Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-a" in 174.916791ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finished \"us-central1-a\" in 174.916791ms"}}
+[debug] [2024-12-03T05:27:29.321Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:27:29.321Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-12-03T05:27:29.321Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-12-03T05:27:29.321Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:28:04.602Z] [work-queue] {"queuedWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:28:04.596Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:28:04.607Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/ebuddy-backend-b531c/us-central1/a-2024-12-03T05:28:04.596Z"],"workRunningCount":1}
+[debug] [2024-12-03T05:28:04.608Z] Accepted request GET /ebuddy-backend-b531c/us-central1/a --> us-central1-a
+[debug] [2024-12-03T05:28:04.632Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-12-03T05:28:04.633Z] [functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/ebuddy-backend-b531c/us-central1/a, mapping to path=/"}}
+[debug] [2024-12-03T05:28:04.639Z] [worker-pool] submitRequest(triggerId=us-central1-a) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-a)"}}
+[info] i  functions: Beginning execution of "us-central1-a" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Beginning execution of \"us-central1-a\""}}
+[debug] [2024-12-03T05:28:04.643Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: BUSY"}}
+[debug] [2024-12-03T05:28:04.845Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-a" in 202.346042ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finished \"us-central1-a\" in 202.346042ms"}}
+[debug] [2024-12-03T05:28:04.846Z] [worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"[worker-us-central1-a-e3a90e0f-115e-4c77-a240-8979edb38fb9]: IDLE"}}
+[debug] [2024-12-03T05:28:04.846Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-12-03T05:28:04.846Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-a"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-12-03T05:28:04.846Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-12-03T05:30:09.199Z] Functions emulator received unknown request at path /undefined/us-central1/fetchUserData

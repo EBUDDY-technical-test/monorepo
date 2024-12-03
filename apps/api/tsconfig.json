@@ -1,0 +1,19 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "es2016",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@controller/*": ["src/controller/*"],
+      "@routes/*": ["src/routes/*"],
+      "@config/*": ["src/config/*"],
+      "@middleware/*": ["src/middleware/*"]
+    },
+  },
+}
